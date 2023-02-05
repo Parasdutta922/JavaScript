@@ -24,11 +24,11 @@ const dj = {
 //dj.getInfo();
 
 //Borowing of the method.
-// What bind does it binds the object. but you can change this binding to.bind actually gives you reference
+// What bind does it binds the object. but you can change this binding to .bind actually gives you reference
 
 //Jd.getInfo.bind()//right now by defualt bind is pointing towards Jd but we can pass on a parameter/argument inside bind
 Jd.getInfo.bind(dj);// here we are passing dj as an argument and bind is pointing towards dj //now the this reference is not pointing towards Jd but to dj
-//after running this nothing would happen in the console because bind always gives you reference back and you have to that reference.
+//after running this nothing would happen in the console because bind always gives you reference back and you have to do something with that reference.
 
 // Now there are two ways of running 
 
