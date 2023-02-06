@@ -68,7 +68,7 @@ Because the fullName method is a method of the person object.
 /*5.Section--------------------------------------------------------------------------------------------------------------------*/
 
 /*What is _proto_/prototype*/
-var User = function(firstName, courseCount){// functional way of definig a  object.
+var User = function(firstName, courseCount){// this is called constructer function. Functional way of definig a object.
    this.firstName = firstName;
    this.courseCount = courseCount;
    this.getCourseCount = function(){
