@@ -19,7 +19,7 @@ But it doesn't behave that way that is the problem.
 function calldb(){
     setTimeout(()=>{
         console.log("Db call is done");
-        console.log("------------------------------------------------------------------------\n")
+        console.log("------------------------------------------------------------------------")
         return 50;
     },4000);
 }
