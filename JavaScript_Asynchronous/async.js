@@ -17,7 +17,7 @@ But it doesn't behave that way that is the problem.
 
 // this is the problem 
 function calldb(){
-    setTimeout(()=>{
+    setTimeout(()=>{// you can think of this as readfile()funtion after 4 seconds(reading the data) it prints console.log() and then returns 50
         console.log("Db call is done");
         console.log("------------------------------------------------------------------------")
         return 50;
@@ -25,7 +25,8 @@ function calldb(){
 }
 
 const result = calldb();//undefined => what's happening here is that when the function calldb() executes it goes inside the function block then waits for 4 seconds and return 50(as a response) but there's no one to catch that response. The console.log is not a aysnchronous operation that why it is executed imediatelly. 
-console.log(result);// Db call is done => this doesn't wait for the first operation to complete and print Db call is done.
+console.log(result);// Db call is done => this doesn't wait for the first operation to complete and print Db call is done. But this needs data from the other first task which is 50.
+// question is if my second task in the queue needs data from the firt task which is a asynchronous task(Input/output task) how can i wait for the first task to finish before executing the second.
 /*Note: that returning and logging are two different things */
 
 // to fix this we can use callback 
@@ -36,7 +37,7 @@ console.log(result);// Db call is done => this doesn't wait for the first operat
 2. To be able to finish asynchronous operation. To wait for asynchronous task to finish.
 */
 
-function callDb(printCb){// this function is taking another function as an parameter. 
+function callDb(printCb){// this function is taking another function as an parameter. => same here refer to the readfile() function example
     setTimeout(()=>{//2nd after waiting it executes console.log() and then it executes printCb(50)
         console.log("Db call is done")
         printCb(50);
